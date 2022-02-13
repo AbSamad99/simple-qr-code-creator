@@ -1,0 +1,11 @@
+.btn-style {
+  /* text-align: center !important; */
+  font-size: large !important;
+  margin-left: 31% !important;
+  margin-top: 1.5rem;
+  width: 35%;
+}
+
+.card-size {
+  height: 592px;
+}
