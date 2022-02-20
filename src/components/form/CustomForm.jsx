@@ -99,7 +99,7 @@ const CustomForm = () => {
 
   const setTotalAndVatAmount = (value) => {
     setInvoiceTotal(value);
-    setVatTotal(value * 0.15);
+    setVatTotal((value * 3) / 23);
   };
 
   return (
