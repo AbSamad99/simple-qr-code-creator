@@ -3,9 +3,10 @@
   font-size: large !important;
   margin-left: 31% !important;
   margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   width: 35%;
 }
 
 .card-size {
-  height: 592px;
+  min-height: 90vh;
 }

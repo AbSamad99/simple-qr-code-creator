@@ -90,12 +90,16 @@ const CustomForm = () => {
       newErrors.regNum = "TRN must be 15 characters";
     if (!timeStamp) newErrors.timeStamp = "Cannot be empty!";
     if (!invoiceTotal) newErrors.invoiceTotal = "Cannot be empty!";
-    if (!vatTotal) newErrors.vatTotal = "Cannot be empty!";
     return newErrors;
   };
 
   const resetSingleError = (field) => {
     errors[field] = undefined;
+  };
+
+  const setTotalAndVatAmount = (value) => {
+    setInvoiceTotal(value);
+    setVatTotal(value * 0.15);
   };
 
   return (
@@ -136,18 +140,16 @@ const CustomForm = () => {
                   label="Invoice total (with VAT)"
                   placeholder="Eg: 7400.02"
                   type="number"
-                  setValue={setInvoiceTotal}
+                  setValue={setTotalAndVatAmount}
                   error={errors.invoiceTotal}
                   resetSingleError={resetSingleError}
                 />
                 <FormInput
                   id="vatTotal"
                   label="VAT total"
-                  placeholder="Eg: 965.22"
+                  disabled={true}
                   type="number"
-                  setValue={setVatTotal}
-                  error={errors.vatTotal}
-                  resetSingleError={resetSingleError}
+                  value={vatTotal}
                 />
                 <Button type="submit" className="btn-style">
                   Generate QR
